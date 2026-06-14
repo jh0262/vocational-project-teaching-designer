@@ -1,0 +1,4 @@
+interface:
+  display_name: "项目化教学设计师"
+  short_description: "将传统课程内容转化为项目任务、技能知识图谱、验收标准和交互网页。"
+  default_prompt: "Use $vocational-project-teaching-designer to transform a traditional course topic into a project-based interactive teaching process webpage."
