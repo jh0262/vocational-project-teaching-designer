@@ -79,23 +79,47 @@ Generate a project task-skill matrix with columns:
 
 Prefer verbs that describe observable ability: identify, select, calculate, connect, debug, measure, compare, explain, document, present, optimize.
 
-### 4. Build The Task-Knowledge Matrix And Key Explanations
+After the matrix, generate a key skill point display section. It must not be a simple list. For each key or difficult skill point, include:
+
+- Skill point name.
+- Skill type: cognitive, operation, digital, professional, or integrated.
+- Related task.
+- Performance standard.
+- Demonstration steps.
+- Student practice activity.
+- Common failure.
+- Coaching strategy.
+- Evidence for mastery.
+
+Mark key skills with `★` and difficult skills with `▲`.
+
+### 4. Build The Task-Knowledge Matrix And Key/Difficult Knowledge Display
 
 Analyze the knowledge needed to support each skill.
 
 Generate:
 
 - Task-knowledge matrix with task, supporting knowledge, key knowledge, difficult knowledge, application point, evidence of understanding.
-- Key knowledge explanations for all marked key or difficult knowledge points.
+- A key/difficult knowledge point display section for all marked knowledge points.
 
-For each key explanation, include:
+For each key or difficult knowledge point, include:
 
+- Knowledge point name with `★` or `▲`.
 - Plain-language meaning.
 - Why students need it for the task.
+- Relationship to the relevant skill point.
+- Structural explanation: concept, principle, method/procedure, and application condition.
 - Typical misconception.
 - Concrete example.
+- Mini demonstration or classroom activity.
 - Teacher question prompts.
 - Quick formative check.
+- Recommended teaching breakthrough strategy.
+
+Separate key knowledge from difficult knowledge when helpful:
+
+- Key knowledge focuses on essential concepts or methods that students must use to complete the project.
+- Difficult knowledge focuses on abstraction, misconception, transfer, or error-prone reasoning.
 
 ### 5. Generate The Skill Mind Map Image
 
@@ -105,6 +129,7 @@ Before calling Image2, prepare a concise image prompt containing:
 
 - Center node: project title.
 - Main branches: task sequence, core skills, sub-skills, tools/equipment/software, performance evidence.
+- Key skills marked with `★`; difficult skills marked with `▲`.
 - Visual style: light background, professional teaching style, clear Chinese labels, readable hierarchy.
 - Output target: local image file suitable for insertion into the webpage.
 
@@ -175,13 +200,14 @@ Create a complete light-theme HTML file that orders content as:
 2. Selected project overview.
 3. Task decomposition.
 4. Task-skill matrix.
-5. Task-knowledge matrix.
-6. Key knowledge explanations.
-7. Image2-generated skill mind map image.
-8. Image2-generated knowledge mind map image with key markers.
-9. Remotion teaching reference animations.
-10. Acceptance standards and task rubrics.
-11. Real-time classroom interaction area.
+5. Key and difficult skill point display.
+6. Task-knowledge matrix.
+7. Key and difficult knowledge point display with detailed explanations.
+8. Image2-generated skill mind map image.
+9. Image2-generated knowledge mind map image with key markers.
+10. Remotion teaching reference animations.
+11. Acceptance standards and task rubrics.
+12. Real-time classroom interaction area.
 
 Use `assets/interactive-page-template.html` as the preferred structure. Adapt copy, colors, and components to the subject. The page must work as a standalone local file.
 
@@ -191,6 +217,7 @@ Use `assets/interactive-page-template.html` as the preferred structure. Adapt co
 - Treat the teacher as facilitator and students as active participants.
 - Provide tabs or step navigation for the teaching process.
 - Include checklists, expandable details, formative questions, and interaction prompts.
+- Provide dedicated displays for key/difficult skill points and key/difficult knowledge points. These displays must include content, teaching strategy, practice activity, and mastery evidence.
 - Insert local Image2-generated mind map images, with text fallbacks.
 - Insert local Remotion-rendered animation videos or embeds, with narration and usage notes.
 - Avoid relying on remote assets. Generated images and videos should be local files referenced by relative paths.

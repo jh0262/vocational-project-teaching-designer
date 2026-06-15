@@ -57,6 +57,29 @@ Classify skills when helpful:
 - Digital skill: simulate, search, process data, visualize, document.
 - Professional skill: communicate, cooperate, follow safety rules, reflect.
 
+## Key And Difficult Skill Point Display Pattern
+
+After task-skill mapping, extract 4-8 key or difficult skill points for explicit teaching display.
+
+Mark skill points consistently:
+
+- `★` for key skills that directly determine project completion quality.
+- `▲` for difficult skills that students commonly fail to perform, transfer, or explain.
+
+For each skill point, show:
+
+- Skill point name.
+- Skill type: cognitive, operation, digital, professional, or integrated.
+- Related task and work scenario.
+- Performance standard in observable terms.
+- Demonstration steps.
+- Student practice activity.
+- Common failure and likely cause.
+- Coaching strategy.
+- Evidence for mastery.
+
+Good skill point displays help teachers know what to demonstrate and help students know what performance counts as competent.
+
 ## Knowledge Support Pattern
 
 Link knowledge to skill decisions.
@@ -74,14 +97,24 @@ Mark difficult knowledge with `▲` when students commonly misunderstand it or n
 
 ## Key Knowledge Explanation Pattern
 
-Explain key knowledge with:
+After task-knowledge mapping, extract 4-10 key or difficult knowledge points for explicit teaching display.
+
+Mark knowledge points consistently:
+
+- `★` for key knowledge that students must use to complete the project.
+- `▲` for difficult knowledge that involves abstraction, misconception, transfer, or error-prone reasoning.
+
+Explain each key or difficult knowledge point with:
 
 - One-sentence plain explanation.
+- Concept, principle, method/procedure, and application condition.
 - A concrete task example.
 - A comparison between wrong thinking and correct thinking.
 - One teacher demonstration or analogy.
 - One student micro-task.
 - One formative question or quick quiz.
+- One teaching breakthrough strategy.
+- One evidence item showing that the student can apply the knowledge.
 
 ## Mind Map Rules
 

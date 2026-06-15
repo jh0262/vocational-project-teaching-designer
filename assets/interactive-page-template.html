@@ -115,6 +115,31 @@
       font-size: 14px;
       margin-top: 8px;
     }
+    .point-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin: 12px 0;
+    }
+    .point-card {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--primary);
+      border-radius: 8px;
+      background: #fff;
+      padding: 16px;
+    }
+    .point-card.key { border-left-color: var(--warn); }
+    .point-card.hard { border-left-color: var(--danger); }
+    .point-tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 9px;
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
     .interaction {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -184,6 +209,7 @@
       <button class="tab" data-target="tasks">任务</button>
       <button class="tab" data-target="skills">技能</button>
       <button class="tab" data-target="knowledge">知识</button>
+      <button class="tab" data-target="focus">重点难点</button>
       <button class="tab" data-target="maps">图谱</button>
       <button class="tab" data-target="animations">动画</button>
       <button class="tab" data-target="assessment">验收</button>
@@ -202,14 +228,28 @@
     <section id="skills">
       <h2>三、任务技能对照表</h2>
       {{TASK_SKILL_MATRIX}}
+      <h3>关键与难点技能点展示</h3>
+      <p class="asset-note">技能点展示应说明学生要会做什么、做到什么标准、如何练习、如何判断已经掌握。</p>
+      {{KEY_DIFFICULT_SKILL_POINTS}}
     </section>
     <section id="knowledge">
       <h2>四、任务知识点对照表与重点知识详解</h2>
       {{TASK_KNOWLEDGE_MATRIX}}
-      {{KEY_KNOWLEDGE_EXPLANATIONS}}
+      <h3>重点与难点知识点展示</h3>
+      <p class="asset-note">知识点展示应说明概念、原理、方法、应用条件、常见误区、突破策略和形成性检查。</p>
+      {{KEY_DIFFICULT_KNOWLEDGE_POINTS}}
+    </section>
+    <section id="focus">
+      <h2>五、重点难点突破设计</h2>
+      <h3>关键技能点</h3>
+      {{KEY_DIFFICULT_SKILL_POINTS}}
+      <h3>重点难点知识点</h3>
+      {{KEY_DIFFICULT_KNOWLEDGE_POINTS}}
+      <h3>知识技能对应关系</h3>
+      {{KNOWLEDGE_SKILL_ALIGNMENT}}
     </section>
     <section id="maps">
-      <h2>五、技能与知识思维导图</h2>
+      <h2>六、技能与知识思维导图</h2>
       <h3>项目技能思维导图</h3>
       <img class="mindmap-image" src="{{SKILL_MINDMAP_IMAGE}}" alt="{{PROJECT_TITLE}}项目技能思维导图" />
       <p class="asset-note">由 Image2 生成。若图片无法显示，请查看下方文字备用稿。</p>
@@ -220,16 +260,16 @@
       <div class="mindmap">{{KNOWLEDGE_MINDMAP_TEXT_FALLBACK}}</div>
     </section>
     <section id="animations">
-      <h2>六、突破重点知识的教学参考动画</h2>
+      <h2>七、突破重点知识的教学参考动画</h2>
       <p class="asset-note">以下动画由 Remotion 插件生成。每个动画建议包含视频、教师旁白、互动问题和课堂使用提示。</p>
       {{REMOTION_TEACHING_ANIMATIONS}}
     </section>
     <section id="assessment">
-      <h2>七、项目验收标准与任务验收表</h2>
+      <h2>八、项目验收标准与任务验收表</h2>
       {{ASSESSMENT_STANDARDS}}
     </section>
     <section id="live">
-      <h2>八、实时课堂互动</h2>
+      <h2>九、实时课堂互动</h2>
       <div class="interaction">
         <div class="card">
           <h3>任务进度</h3>
