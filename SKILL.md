@@ -1,6 +1,6 @@
 ---
 name: vocational-project-teaching-designer
-description: Convert traditional course content for vocational or undergraduate teaching into project-based teaching designs. Use when the user provides a learner level such as 中职, 高职, or 本科 and asks to transform teaching content into projects, task decomposition, task-skill and task-knowledge matrices, key knowledge explanations, skill and knowledge mind maps, teaching animations, assessment rubrics, or a light-theme interactive teaching process webpage.
+description: Convert traditional course content for vocational or undergraduate teaching into project-based teaching designs. Use when the user provides a learner level such as 中职, 高职, or 本科 and asks to transform teaching content into projects, task decomposition, task-skill and task-knowledge matrices, key knowledge explanations, Image2-generated skill and knowledge mind map images, Remotion teaching animations, assessment rubrics, or a light-theme interactive teaching process webpage.
 ---
 
 # Vocational Project Teaching Designer
@@ -18,6 +18,15 @@ Ask for missing essentials before designing:
 - Optional constraints: class hours, major, available equipment/software, assessment style, local industry context.
 
 If optional constraints are absent, state reasonable assumptions briefly and continue.
+
+## Installation And Capability Check
+
+Before producing the final webpage, check that these capabilities are installed or enabled:
+
+- Image2 or an equivalent image generation capability for producing the skill mind map and knowledge mind map as image files.
+- Remotion plugin for producing teaching reference animations as video or embeddable animation assets.
+
+If either capability is unavailable, stop before final asset generation and ask the user to install or enable it. Continue with text-only planning only when the user explicitly accepts a temporary fallback.
 
 ## Workflow
 
@@ -88,37 +97,38 @@ For each key explanation, include:
 - Teacher question prompts.
 - Quick formative check.
 
-### 5. Draw The Skill Mind Map
+### 5. Generate The Skill Mind Map Image
 
-Create a project skill mind map using Mermaid mindmap syntax unless the user requests another format.
+Use Image2 to generate a polished project skill mind map image. Do not leave the final webpage with only Mermaid or plain-text mind map code.
 
-Center node: project title.
+Before calling Image2, prepare a concise image prompt containing:
 
-Branches:
+- Center node: project title.
+- Main branches: task sequence, core skills, sub-skills, tools/equipment/software, performance evidence.
+- Visual style: light background, professional teaching style, clear Chinese labels, readable hierarchy.
+- Output target: local image file suitable for insertion into the webpage.
 
-- Task sequence.
-- Core skills.
-- Sub-skills.
-- Tools/equipment/software.
-- Performance evidence.
+Also keep a text fallback outline for accessibility and review.
 
-### 6. Draw The Knowledge Mind Map
+Insert the generated image into the final webpage with `alt` text and a text fallback.
 
-Create a project knowledge mind map using Mermaid mindmap syntax.
+### 6. Generate The Knowledge Mind Map Image
 
-Center node: project title.
+Use Image2 to generate a polished project knowledge mind map image. Do not leave the final webpage with only Mermaid or plain-text mind map code.
 
-Branches:
+Before calling Image2, prepare a concise image prompt containing:
 
-- Foundational knowledge.
-- Task-specific knowledge.
-- Key knowledge marked with `★`.
-- Difficult knowledge marked with `▲`.
-- Knowledge-to-skill transfer points.
+- Center node: project title.
+- Main branches: foundational knowledge, task-specific knowledge, key knowledge, difficult knowledge, knowledge-to-skill transfer points.
+- Marker rule: key knowledge marked with `★`; difficult knowledge marked with `▲`.
+- Visual style: light background, professional teaching style, clear Chinese labels, readable hierarchy.
+- Output target: local image file suitable for insertion into the webpage.
 
-### 7. Design Teaching Reference Animations
+Also keep a text fallback outline for accessibility and review.
 
-For each key or difficult knowledge point, design a short teaching animation plan and include an implementable HTML/CSS/JS animation block in the final webpage.
+### 7. Produce Teaching Reference Animations With Remotion
+
+For each key or difficult knowledge point, design a short teaching animation plan and use the Remotion plugin to produce the teaching reference animation. Do not implement final teaching animations as plain CSS/SVG/vanilla JavaScript unless the user explicitly accepts a fallback.
 
 Each animation design must include:
 
@@ -129,7 +139,17 @@ Each animation design must include:
 - Student interaction.
 - Expected learning breakthrough.
 
-Keep animations lightweight and self-contained. Prefer SVG/CSS/vanilla JavaScript so the webpage can run locally without network access.
+For Remotion output, include:
+
+- Composition name.
+- Duration and aspect ratio.
+- Scene sequence.
+- On-screen text.
+- Motion description.
+- Optional voiceover script.
+- Rendered video or local preview asset path.
+
+Insert the rendered Remotion output into the final webpage with a `<video controls>` element or an equivalent local embed. Include the narration script and teacher-use notes below each animation.
 
 ### 8. Design Assessment And Acceptance Standards
 
@@ -157,9 +177,9 @@ Create a complete light-theme HTML file that orders content as:
 4. Task-skill matrix.
 5. Task-knowledge matrix.
 6. Key knowledge explanations.
-7. Skill mind map.
-8. Knowledge mind map with key markers.
-9. Teaching reference animations.
+7. Image2-generated skill mind map image.
+8. Image2-generated knowledge mind map image with key markers.
+9. Remotion teaching reference animations.
 10. Acceptance standards and task rubrics.
 11. Real-time classroom interaction area.
 
@@ -171,8 +191,9 @@ Use `assets/interactive-page-template.html` as the preferred structure. Adapt co
 - Treat the teacher as facilitator and students as active participants.
 - Provide tabs or step navigation for the teaching process.
 - Include checklists, expandable details, formative questions, and interaction prompts.
-- Render Mermaid diagrams if an internet connection is available, but also include readable text fallback.
-- Avoid relying on external assets. Use inline SVG/CSS/JS for animations.
+- Insert local Image2-generated mind map images, with text fallbacks.
+- Insert local Remotion-rendered animation videos or embeds, with narration and usage notes.
+- Avoid relying on remote assets. Generated images and videos should be local files referenced by relative paths.
 - Keep Chinese labels clear and suitable for vocational education.
 
 ## References

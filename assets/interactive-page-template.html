@@ -97,6 +97,24 @@
       padding: 16px;
       overflow-x: auto;
     }
+    .mindmap-image,
+    .animation-video {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+      display: block;
+    }
+    .mindmap-image {
+      max-height: 720px;
+      object-fit: contain;
+      padding: 10px;
+    }
+    .asset-note {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 8px;
+    }
     .interaction {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -193,16 +211,18 @@
     <section id="maps">
       <h2>五、技能与知识思维导图</h2>
       <h3>项目技能思维导图</h3>
-      <div class="mindmap">{{SKILL_MINDMAP}}</div>
+      <img class="mindmap-image" src="{{SKILL_MINDMAP_IMAGE}}" alt="{{PROJECT_TITLE}}项目技能思维导图" />
+      <p class="asset-note">由 Image2 生成。若图片无法显示，请查看下方文字备用稿。</p>
+      <div class="mindmap">{{SKILL_MINDMAP_TEXT_FALLBACK}}</div>
       <h3>项目知识思维导图</h3>
-      <div class="mindmap">{{KNOWLEDGE_MINDMAP}}</div>
+      <img class="mindmap-image" src="{{KNOWLEDGE_MINDMAP_IMAGE}}" alt="{{PROJECT_TITLE}}项目知识思维导图，含重点与难点标记" />
+      <p class="asset-note">由 Image2 生成，重点知识用 ★ 标记，难点知识用 ▲ 标记。若图片无法显示，请查看下方文字备用稿。</p>
+      <div class="mindmap">{{KNOWLEDGE_MINDMAP_TEXT_FALLBACK}}</div>
     </section>
     <section id="animations">
       <h2>六、突破重点知识的教学参考动画</h2>
-      {{TEACHING_ANIMATIONS}}
-      <div class="animation-stage" aria-label="示例动画区域">
-        <div class="flow-dot"></div>
-      </div>
+      <p class="asset-note">以下动画由 Remotion 插件生成。每个动画建议包含视频、教师旁白、互动问题和课堂使用提示。</p>
+      {{REMOTION_TEACHING_ANIMATIONS}}
     </section>
     <section id="assessment">
       <h2>七、项目验收标准与任务验收表</h2>

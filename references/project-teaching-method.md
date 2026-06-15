@@ -85,9 +85,9 @@ Explain key knowledge with:
 
 ## Mind Map Rules
 
-Skill mind maps should move from project to tasks to observable skills.
+Skill mind maps should be generated as Image2 image assets and should move from project to tasks to observable skills.
 
-Knowledge mind maps should move from project to knowledge families to key and difficult points.
+Knowledge mind maps should be generated as Image2 image assets and should move from project to knowledge families to key and difficult points.
 
 Use markers consistently:
 
@@ -95,11 +95,13 @@ Use markers consistently:
 - `▲` for difficult knowledge.
 - `→` for transfer to skill.
 
+Keep a text outline fallback for accessibility, but use the generated image as the primary webpage presentation.
+
 ## Teaching Animation Rules
 
 Animations are for breaking through misconceptions, not decoration.
 
-A useful teaching reference animation should:
+Use the Remotion plugin to produce final teaching animation assets. A useful teaching reference animation should:
 
 - Show a dynamic relationship, sequence, comparison, or cause-effect process.
 - Let students pause, replay, or step through.
@@ -112,6 +114,8 @@ Prefer:
 - Before/after comparison for misconception correction.
 - Flow animation for signal, force, data, energy, information, or material movement.
 - Parameter slider for abstract formulas or relationships.
+
+For each Remotion animation, specify the composition name, duration, scene sequence, motion logic, on-screen text, narration script, and rendered asset path for insertion into the final webpage.
 
 ## Assessment Design Rules
 
